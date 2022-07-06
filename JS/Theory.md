@@ -16,7 +16,7 @@
 + int: 숫자 및 연산자 사용가능 => 숫자 계산 가능
 + string: 문자 사용 시 "",'' 필요 +이용하여 문자들 붙이기 가능
 + booleans: true, false 사용
-+ null: 값이 주어졌는데 값에 아무것도 없음
++ null: 값이 주어졌는데 값에 아무것도 없음 #파이썬은 none
 + undefined: 값이 정의 되지 않음
 
 ### Variables
@@ -43,3 +43,28 @@
 console.log(ob.point) #10 출력
 + ob.point = 20 # Objects안 속성 변경
 + ob.lastName = "nam" # Objects안 속성 추가
+
+
+### function
++ function A(name, age){ console.log(name, age); }  
+    A("seohyeon",10);
++ 객체 안에 넣을 수 있음  
+const player = {
+    name="nico",  
+    say: function(name){
+        console.log("hi" + name);  
+    },  
+};  
+player.say("didi");  
++ return #반환
+
+### conditonals
++ if(condition1){} else if(condition2){} else{}
++ typeof age #타입 알아내기
++ parseInt("1") #"1"을 1로 만듬, 숫자 문자열을 숫자형으로 변형
++ parseInt("abc") #NaN 출력 * Not a Number
++ isNaN() 함수는 NaN인지 아닌지 판별 false면 number, true면 NaN임
++ &&(and), ||(or), ===(같다)
+
+
+
