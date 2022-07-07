@@ -87,4 +87,6 @@ title.addEventListener("mouseenter",handleTitleClick);
 title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면 함수 전달 
 + window.addEventListener("resize", 함수명) #윈도우 크기가 달라지면 함수 전달
 + window.addEventListener("copy", 함수명) #글을 카피하면 함수 전달
++ window.addEventListener("contextmenu", 함수명) #사용자가 요소를 마우스오른쪽 단추로 클릭해 메뉴를 열 때 발생
+
 
