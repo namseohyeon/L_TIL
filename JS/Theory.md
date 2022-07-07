@@ -78,13 +78,16 @@ player.say("didi");
 ### event
 + ex)  
 const title = document.querySelector(".hello h1:first-child")  
-function handleTitleClick(){  
+
+function handleTitleClick(){    
     title.style.color = "blue";
-}    
+}      
+
 title.addEventListener("click",handleTitleClick); == title.onClick = handleTitleClick;  #클릭하면 함수 전달
 title.addEventListener("mouseenter",handleTitleClick);
 #마우스가 오면 함수 전달    
 title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면 함수 전달 
+
 + window.addEventListener("resize", 함수명) #윈도우 크기가 달라지면 함수 전달
 + window.addEventListener("copy", 함수명) #글을 카피하면 함수 전달
 
