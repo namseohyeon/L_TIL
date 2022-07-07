@@ -76,11 +76,11 @@ player.say("didi");
 
 
 ### event
-+ ex)  
++ ex)   
 const title = document.querySelector(".hello h1:first-child")  
 
 function handleTitleClick(){    
-    title.style.color = "blue";
+    title.style.color = "blue";  
 }      
 
 title.addEventListener("click",handleTitleClick); == title.onClick = handleTitleClick;  #클릭하면 함수 전달
