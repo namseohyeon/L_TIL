@@ -66,5 +66,25 @@ player.say("didi");
 + isNaN() 함수는 NaN인지 아닌지 판별 false면 number, true면 NaN임
 + &&(and), ||(or), ===(같다)
 
+###  Searching For Elements
++ querySelector(".hello h1:first-child") #hello 클래스의 h1태그 찾기, 여러개 존재 시 첫번째 element만 가져옴 -> 모두 가져오고 싶으면 querySelectorAll()사용 #Array를 반환 
++ querySelector는 css selector를 사용하여 css로 검색 가능
++ querySelector("#hello") == Element.getElementsById("hello")
++ Element.getElementsByClassName() #className태그의 텍스트 가져옴
++ Element.getElementsById() #Id의 텍스트 가져옴
++ Element.getElementsByTagName #div,h1같은 태그들의 텍스트를 불러옴
 
+
+### event
++ ex)  
+const title = document.querySelector(".hello h1:first-child")  
+function handleTitleClick(){  
+    title.style.color = "blue";
+}    
+title.addEventListener("click",handleTitleClick); == title.onClick = handleTitleClick;  #클릭하면 함수 전달
+title.addEventListener("mouseenter",handleTitleClick);
+#마우스가 오면 함수 전달    
+title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면 함수 전달 
++ window.addEventListener("resize", 함수명) #윈도우 크기가 달라지면 함수 전달
++ window.addEventListener("copy", 함수명) #글을 카피하면 함수 전달
 
