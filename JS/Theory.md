@@ -36,16 +36,19 @@
 + sum.push("push") #값 추가 #파이썬은 append
 
 ### Objects
+<pre>
 + const ob = { # 안에 속성 작성
     name: "seohyeon",
     point: 10
 }  
+</pre>
 console.log(ob.point) #10 출력
 + ob.point = 20 # Objects안 속성 변경
 + ob.lastName = "nam" # Objects안 속성 추가
 
 
 ### function
+<pre>
 + function A(name, age){ console.log(name, age); }  
     A("seohyeon",10);
 + 객체 안에 넣을 수 있음  
@@ -55,6 +58,7 @@ const player = {
         console.log("hi" + name);  
     },  
 };  
+</pre>
 player.say("didi");  
 + return #반환
 
@@ -76,15 +80,19 @@ player.say("didi");
 
 
 ### event
-+ ex)  
+ex)
+<pre>
 const title = document.querySelector(".hello h1:first-child")  
-function handleTitleClick(){  
-    title.style.color = "blue";
-}    
+
+function handleTitleClick(){    
+        title.style.color = "blue";  
+}      
+
 title.addEventListener("click",handleTitleClick); == title.onClick = handleTitleClick;  #클릭하면 함수 전달
 title.addEventListener("mouseenter",handleTitleClick);
 #마우스가 오면 함수 전달    
 title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면 함수 전달 
+</pre>
 + window.addEventListener("resize", 함수명) #윈도우 크기가 달라지면 함수 전달
 + window.addEventListener("copy", 함수명) #글을 카피하면 함수 전달
 + window.addEventListener("contextmenu", 함수명) #사용자가 요소를 마우스오른쪽 단추로 클릭해 메뉴를 열 때 발생
