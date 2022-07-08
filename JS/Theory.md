@@ -97,4 +97,7 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
 + window.addEventListener("copy", 함수명) #글을 카피하면 함수 전달
 + window.addEventListener("contextmenu", 함수명) #사용자가 요소를 마우스오른쪽 단추로 클릭해 메뉴를 열 때 발생
 
+### CSS in Javascript
++ 조건문을 추가하여 이벤트 사용 가능  
++ css와 js파일 바로 연결하여 사용가능
 
