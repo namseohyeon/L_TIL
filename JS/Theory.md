@@ -100,10 +100,11 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
 ### CSS in Javascript
 + 조건문을 추가하여 이벤트 사용 가능  
 + css와 js파일 바로 연결하여 사용가능
-+ classList class들의 목록으로 작업 할 수 있게 허용
++ classList: class들의 목록으로 작업 허용, 기존의 클래스네임이 조건문에 의해 없어질 수 있어 그때 사용
 + h1.classList.contain(A) #A라는 className이 리스트에 있는지 확인
 + h1.classList.remove(A) #A라는 className 삭제
 + h1.classList.add(A) #A라는 className 추가
 + h1.classList.toggle("A") #A라는 클래스가 있는 지 확인 후 제거 + 없다면 추가 #위 3개의 코드 합친 것과 같음
++ 창크기 조절하기 : inner 경우 창틀을 뺀 내용과 스크롤를 포함한 전체 윈도우 크기/ outer의 경우 창틀과 스크롤 모두 포함한 전체 크기
 
 
