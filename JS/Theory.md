@@ -74,6 +74,7 @@ player.say("didi");
 + querySelector(".hello h1:first-child") #hello 클래스의 h1태그 찾기, 여러개 존재 시 첫번째 element만 가져옴 -> 모두 가져오고 싶으면 querySelectorAll()사용 #Array를 반환 
 + querySelector는 css selector를 사용하여 css로 검색 가능
 + querySelector("#hello") == Element.getElementsById("hello")
++ document.querySelector("#userForm #username") == document.getElementById("username"); #querySelector가 더 구체적이고, 제한적이다. id = "userForm"인 태그 속  id = "username"인 태그를 가져옴
 + Element.getElementsByClassName() #className태그의 텍스트 가져옴
 + Element.getElementsById() #Id의 텍스트 가져옴
 + Element.getElementsByTagName #div,h1같은 태그들의 텍스트를 불러옴
@@ -107,4 +108,16 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
 + h1.classList.toggle("A") #A라는 클래스가 있는 지 확인 후 제거 + 없다면 추가 #위 3개의 코드 합친 것과 같음
 + 창크기 조절하기 : inner 경우 창틀을 뺀 내용과 스크롤를 포함한 전체 윈도우 크기/ outer의 경우 창틀과 스크롤 모두 포함한 전체 크기
 
-
+## 정리
++ JS에서 HTML에 액세스하기 위해 사용하는 객체는 document
++ document.querySelector(".home h1:first-child") # class="home"인 태그의 h1태그들 중 첫번째 요소(first-child)
++ className과 classList의 차이점: 
+    + className는 모든 클래스를 교체하여 기존의 class가 없어짐
+    + classList는 클래스 자체를 건드리지 않음. 클래스를 추가하고 삭제하는 방향으로 하여 기존 클래스를 유지
+        + classList: 클래스들의 리스트, 1번 클래스 뒤 2번 클래스를 추가해서 속성을 덮어씌울 수 있고 제거해서 다시 1번 클래스로 돌아갈 수 있음
+        + classList 메소드
+            + Element.classList.add( "String" ) #클래스 값을 추가. 추가하려는 클래스가 엘리먼트의 class 속성에 이미 존재 시 무시
+            + Element.classList.remove( "String" ) #지정한 클래스 제거
+            + Element.classList.contains( "String") #지정한 클래스 값이 엘리먼트의 class 속성에 존재하는지 불리언 타입으로 확인
+            + Element.classList.replace( "oldClass", "newClass" ) #존재하는 클래스를 새로운 클래스로 교체
+ 
