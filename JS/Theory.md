@@ -120,4 +120,16 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
             + Element.classList.remove( "String" ) #지정한 클래스 제거
             + Element.classList.contains( "String") #지정한 클래스 값이 엘리먼트의 class 속성에 존재하는지 불리언 타입으로 확인
             + Element.classList.replace( "oldClass", "newClass" ) #존재하는 클래스를 새로운 클래스로 교체
+
+#### HTML in Javascript
++ input 유효성 검사 작동을 위해 form을 겉에 사용해야함
++ form 안에 엔터를 누르기 & form안에 있는 버튼을 눌렀을 때 -> input이 더 존재하지 않는다면 자동으로 submit이 됨 
++ addEventListener("click", 함수명)이 필요가 없어짐, 제출이 필요함-> addEventListener("submit", 함수명)사용
++ 함수가 하나의 인수를 받고(첫번째 인수의 정보: 현재일어나는일), 그걸 js에 넘겨주고 있음
++ html의 기본 설정인 새로고침을 멈추기 위해 preventDefault()라는 함수 사용 # event의 기본활동을 막는다.
++ "Hello"+name == `Hello ${name}`
++ submit 후 저장 방법: localStorage
+    + localStorage.setItem("username","seohyeon") #저장
+    + localStorage.removeItem("username") #삭제
+    + localStorage.getItem("username") # 가져오기
  
