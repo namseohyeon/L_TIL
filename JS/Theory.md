@@ -121,7 +121,7 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
             + Element.classList.contains( "String") #지정한 클래스 값이 엘리먼트의 class 속성에 존재하는지 불리언 타입으로 확인
             + Element.classList.replace( "oldClass", "newClass" ) #존재하는 클래스를 새로운 클래스로 교체
 
-#### HTML in Javascript
+### HTML in Javascript
 + input 유효성 검사 작동을 위해 form을 겉에 사용해야함
 + form 안에 엔터를 누르기 & form안에 있는 버튼을 눌렀을 때 -> input이 더 존재하지 않는다면 자동으로 submit이 됨 
 + addEventListener("click", 함수명)이 필요가 없어짐, 제출이 필요함-> addEventListener("submit", 함수명)사용
@@ -133,3 +133,18 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
     + localStorage.removeItem("username") #삭제
     + localStorage.getItem("username") # 가져오기
  
+
+ ### 호출스케줄링
+ + setInterval(함수명, 1000) #일정 시간 간격을 두고 함수를 실행하는 방법/ 1000ms = 1s
+ + setTimeout(함수명, 1000); #일정 시간이 지난 후에 함수를 실행하는 방법
+
+ ### 시간관련 메서드
+ + const date = new Date();
+ + date.getDate() #14일
+ + date.getDay() #4 (목요일)
+ + date.getHours() #시간 호출, padStart사용 불가 숫자이기 때문 -> string()으로 감싸고 사용은 가능
+ + date.getMinutes() #분 호출
+ + date.getsecons() #초 호출
+ + date.getyear() #초 호출
+ + "1".padStart(2,"0") #앞글자가 2개가 아니라면 앞쪽에 0을 추가 #"01"출력
+ + 
