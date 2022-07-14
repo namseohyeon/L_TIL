@@ -147,4 +147,16 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
  + date.getsecons() #초 호출
  + date.getyear() #초 호출
  + "1".padStart(2,"0") #앞글자가 2개가 아니라면 앞쪽에 0을 추가 #"01"출력
- + 
+ 
+ ### 그 외의 매소드
+ + Math.random #0~1 사이의 유리수들 랜덤
+ + Math.round(1.4) # 0.5를 기준으로 내림 혹은 올림
+ + Math.ceil(1.01) #올림
+ + Math.floor(1.01) #내림
+ + [].length
+ + element.innerText #element 안의 text 값들을 통으로 가져옵니다.
+ + element.innerHTML #innerText와는 달리 innerHTML은 element 안의 HTML이나 XML을 가져옴
+ + const word = document.createElement("img") #img 태그 생성
+ + word.src = `img(경로)/${사진이름, 배열}` #img.src 주소 입력
+ + document.body.appendChild(word) #html 맨 아래에 추가
+ + document.body.prependChild(word) #html 맨 위에 추가
