@@ -154,9 +154,21 @@ title.addEventListener("mouseleave",handleTitleClick);   #마우스가 떠나면
  + Math.ceil(1.01) #올림
  + Math.floor(1.01) #내림
  + [].length
+
  + element.innerText #element 안의 text 값들을 통으로 가져옵니다.
  + element.innerHTML #innerText와는 달리 innerHTML은 element 안의 HTML이나 XML을 가져옴
+
  + const word = document.createElement("img") #img 태그 생성
  + word.src = `img(경로)/${사진이름, 배열}` #img.src 주소 입력
  + document.body.appendChild(word) #html 맨 아래에 추가
  + document.body.prependChild(word) #html 맨 위에 추가
+
+ ### gradient
++ css gradient는 색상이 아닌, 크기가 없는 이미지
++ 즉, css로 색 지정할때 보통 background-color 사용했지만, 그레디언트를 지정할때 <b>background-image</b>속성 사용
+    + gradient 종류
+        + linear-gradient #선형
+        + radial-gradient #반지름형
+        + repeating gradient #반복형
+ + const bodyColor2 = colors[Math.floor(Math.random() * colors.length)]; #바탕 색 배열 랜덤 선택
+ + body.style.backgroundImage = `linear-gradient(to right, ${bodyColor1} , ${bodyColor2})`; 배경 색 그라데이션 변화
