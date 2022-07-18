@@ -1,4 +1,6 @@
-
+# 모듈 사용 시 편리함
+# from collections import deque
+# popleft(),appendleft(), append(), pop() 존재
 class Queue():
     def __init__(self):
         self.queue = []
