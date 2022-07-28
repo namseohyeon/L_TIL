@@ -1,45 +1,33 @@
-
-
-# N,M,V = map(int,input().split())
-
-# graph = []
-# for i in range(0,M):
-#     graph.append(list(map(int,input().split())))
-
-# print(graph)
-# def dfs(x,y):
-#     if x <= -1 or x >=N or y <= -1 or y >=M:
-#         return False
-#     if graph[v] == 0:
-#         return True
-#     return False 
-
-# result = 0
-# for i in range(M):
-#     for j in range(M):
-#         #현재 위치에서 DFS 수행
-#         if dfs(i,j) == True:
-#             result += 1
-# print(result)
-
-from collections import deque
-import copy
-
-def dfs(graph, v, visited):
-    visited[v]=True
-    print(v, end=' ')
+count=0
+def dfs(graph, v, virused):
+    global count
+    virused[v]=True
+    count+=1
     for i in graph[v]:
-        if visited[i]==False:
-            dfs(graph,i,visited)
-            
-def bfs(graph, start, visited):
-    queue=deque([start])
-    visited[start]=True
-    while queue:
-        v=queue.popleft()
-        print(v, end=' ')
-        for i in graph[v]:
-            if visited[i]==False:
-                queue.append(i)
-                visited[i]=True
+        print(graph[i])
+        if not virused[i]:
+            dfs(graph, i, virused)
 
+#컴퓨터 수
+n=int(input())
+#연결된 컴퓨터 쌍 수
+m=int(input())
+#루트 비우고 index=1~7
+graph=[[]*n for i in range(n+1)]
+#[[], [], [], [], [], [], [], []]
+for i in range(m):
+    a,b=map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+#graph[1]=2
+#graph[2]=1
+#[[], [2], [1], [], [], [], [], []]
+print(graph)
+virused=[False]*(n+1)
+dfs(graph,1,virused)
+print(count-1)
+
+#grp[1]=2,5
+#grp[2]=1,3
+#grp[3]=2
+#grp[5]=1
