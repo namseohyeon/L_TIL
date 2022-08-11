@@ -22,7 +22,7 @@ while start<=end:
         start=mid+1
 print(result)
 
-result = search(arr,target,0,N-1)
+# result = search(arr,target,0,N-1)
 
 if result == None:
     print("원소 존재 x")
