@@ -106,6 +106,7 @@ for i in range(1,n+1):
     <tr><td>큐</td><td>가장 먼저 삽입된 데이터</td></tr>
     <tr><td>우선순위 큐</td><td>가장 우선순위가 높은 데이터</td></tr>
 </table>
+<br>
 ```
 #최소 힙
 import heapq
