@@ -100,13 +100,13 @@ for i in range(1,n+1):
     - 다익스트라 최단 경로 알고리즘을 포함해 다양한 알고리즘에서 사용
     - 리스트: 삽입시간O(1), 삭제시간 O(N)
     - 힙: 삽입시간O(logN), 삭제시간 O(logN)
-<table>
+<!-- <table>
     <tr><td>자료구조</td><td>추출되는 데이터</td></tr>
     <tr><td>스택</td><td>자장 나중에 삽입된 데이터</td></tr>
     <tr><td>큐</td><td>가장 먼저 삽입된 데이터</td></tr>
     <tr><td>우선순위 큐</td><td>가장 우선순위가 높은 데이터</td></tr>
 </table>
-<br>
+<br> -->
 ```
 #최소 힙
 import heapq
