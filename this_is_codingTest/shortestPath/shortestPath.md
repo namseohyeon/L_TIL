@@ -139,3 +139,113 @@ def heapsort(iterable):
 result = heapsort([1,3,5,7,9,2,4,6,8,0])
 print(result)
 ```
+- 다익스트라 알고리즘: 개선된 구현 방법
+    - 단계마다 방문하지 않은 오드 중에서 최단거리가 가장 짧은 노드를 선택하기 위해 힙자료구조를 이용
+    - 다익스트라 알고리즘이 동작하는 기본 원리는 동일
+        - 현재 가장 가까운 노드를 저장해 놓기 위해서 힙 자료구조를 추가적으로 이용한다는 점이 차이
+        - 현재의 최단 거리가 가장 짧은 노드를 선택해야하므로 최소 힙 사용
+```
+import heapq
+import sys
+input = sys.stdin.readline
+INF = int(1e9)
+
+#노드의 개수, 간선의 개수 입력받기
+n, m = map(int,input().split())
+#시작 노드 번호를 입력 받기
+start = int(input())
+#각 노드에 연결되어 있는 노드에 대한 정보를 담는 리스트 만들기
+graph = [[] for i in range(n+1)]
+#방문한 적이 있는지 체크하는 목적의 리스트 만들기
+visited = [False]*(n+1)
+#최단 거리 테이블은 모두 무한으로 초기화
+distance =[INF]*(n+1)
+
+#모든 간선 정보 받기
+for _ in range(m):
+    a,b,c = map(int,input().split())
+    #a번 노드에서 b번 노드로 가는 비용이 c라는 의미
+    graph[a].append((b,c))
+#방문하지 않은 노드 중에서, 가장 최단 거리가 짧은 노드의 번호를 반환
+
+def di(start):
+    q = []
+    heapq.headpush(q,(0,start))
+    distance[strat] = 0
+    while q:
+        dist, now = heapq.heapop(q)
+    if distance[now] <dist:
+        continue
+    for i in graph[now]:
+        cost = dist + i[1]
+        if cost < distance[i[0]]:
+            distance[i[0]] = cost
+            heaqp.heapush(q, cost,i[0])
+
+#다익스트라 알고리즘을 수행
+di(start)
+
+#모든 노드로 가기 위한 최단 고리 출력
+for i in range(1,n+1):
+    #도달할 수 없는 경우, 무한이라고 출력
+    if distance[i] == INF:
+        print("INFINITY")
+    #도달할 수 있는 경우 거리를 출력
+    else:
+        print(distance[i])
+```
+- 시간 복잡도 O(ElogV)
+- 노드를 하나씩 꺼내 검색하는 반복문은 노드의 개수 v이상의 횟수로는 처리x
+    - 현재 우선순위 큐에서 꺼낸 노드와 연결된 다른 노드들을 확인하는 총 횟수는 최대 간선개수(E)만큼 연산이 수행될 수 o
+- 직관적으로 전체 과정은 E개의 원소를 우선순위 큐에 넣었다가 모두 뺴내는 연산과 매우 유사
+    - 시간복잡도를 O(ElogE)로 판단할 수 있음
+    - 중복 간선을 포함하지 않는 경우레 이를 O(ElogV)로 정리할 수 있음
+        - O(ElogE) -> O(ElogV^2) -> O(2ElogV) -> O(ElogV)
+
+### 플로이드 워셜 알고리즘
+- 모든 노드에서 다른 모든 노드까지의 최단 경로 모두 계산
+- 다익스트라 알고리즘과 마찬가지로 단계별로 거쳐가는 노드를 기준으로 알고리즘을 수행
+    - 다만 매 단계마다 방문하지 않는 노드 중에 최단거리를 갖는 노드를 찾는 과정이 필요x
+- 플로이드 워셜은 2차원 테이블에 최단 거리정보를 저장
+- 플로이드 워셜 알고리즘은 다이나믹 프로그래밍 유형에 속함
+- 각 단계마다 특정한 노드를 거쳐 가는 경우 확인
+```
+#플로이드 워셜 알고리즘
+INF = int(le9) #무한
+
+n = int(input())
+m = int(input())
+
+graph = [[INF]*(n+1) for _ in range(n+1)]
+
+for a in range(1,n+1):
+    for b in rnage(1,n+1):
+        if a==b:
+            graph[a][b] = 0
+for _ in range(m):
+    a,b,c = map(int,input().split())
+    graph[a][b] = c
+
+for k in range(1, n+1):
+    for a in range(1. n+1):
+        for b in range(1,n+1):
+            graph[a][b] = min(graph[a][b], graph[a][k]+graph[k][b])
+for a in range(1, n+1):
+    for b in range(1,n+1):
+    if graph[a][b] == INF:
+        print("INFINITY")
+    else:
+        print(graph[a][b])
+```
+- 노드의 개수가 N개일때 알고리즘상으로 N번의 단계를 수행
+    - 각 단계마다 O(N^2^)의 연산을 통해 현재 노드를 거져가는 모든 경로 고려
+- 플로이드 워셜 알고리즘의 총 시간 복잡도는 O(N^3^)
+- 코테에서 주로 노드 500개 이하 출제
+
+<table>
+    <tr><td>자료구조</td><td>추출되는 데이터</td></tr>
+    <tr><td>스택</td><td>자장 나중에 삽입된 데이터</td></tr>
+    <tr><td>큐</td><td>가장 먼저 삽입된 데이터</td></tr>
+    <tr><td>우선순위 큐</td><td>가장 우선순위가 높은 데이터</td></tr>
+</table>
+<br>
